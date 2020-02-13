@@ -5,17 +5,23 @@ from datetime import datetime
 from bs4 import BeautifulSoup as bs
 
 
-def extract_shapes(file):  
+def extract_shapes(file_path, tab_shap_path="Shapes"):  
+    '''
+    Input: 
+        - file_path: Path to the Tableau Workbook
+        - tab_shap_path: Path to the Shapes folder in your Tableau Repo. If None, then a Shapes folder in the current directory will be created.
+    Output:
+        - None. Shapes will be saved in the Shapes folder.
+    '''
     content = []
 
-    with open("Sample Superstore - Sales Performance.twb", "r") as file:
+    with open(file_path, "r") as file:
         content = file.readlines()
         content = "".join(content)
         bs_content = bs(content, "lxml")
 
     count = 0 
 
-    tab_shap_path = "Shapes" # Replace with the path to your Tableau Repo Shapes folder
     if not os.path.exists(tab_shap_path):
         os.makedirs(tab_shap_path)
         
