@@ -10,3 +10,5 @@ import ExtractShapes as ES
 file_path = "My_Workbook.twb"
 extract_shapes(file_path)
 ```
+
+🤓 Read my Medium blog about it [here](https://medium.com/@vivianamarquez/extracting-shapes-from-a-tableau-public-workbook-using-python-b7590f0f5455)!
